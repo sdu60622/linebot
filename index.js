@@ -21,8 +21,8 @@ bot.on('message', async (event) => {
   // }
   let msg = ''
   try {
-    const data = await rp({ uri: 'https://kktix.com/events.json', json: true })
-    msg = data.entry[0].title
+    const data = await rp({ uri: 'http://data.fixer.io/api/latest?access_key=a447ac8212793bd067a2a72d052c44ba&format=1', json: true })
+    msg = data.rates[0].USD
   } catch (error) {
     msg = '發生錯誤'
   }
